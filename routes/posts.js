@@ -9,9 +9,11 @@ const {
     getPostById
 } = require('../controllers/posts')
 
+const { postValid } = require('../validator/postValid')
 
-router.post('/', createPost)
-router.put('/:id', updatePost)
+
+router.post('/', postValid, createPost)
+router.put('/:id', postValid, updatePost)
 router.get('/', getPosts)
 router.get('/:id', getPostById)
 router.delete('/:id', deletePost)

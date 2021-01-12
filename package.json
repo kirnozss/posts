@@ -19,6 +19,7 @@
   "dependencies": {
     "body-parser": "^1.19.0",
     "express": "^4.17.1",
+    "isvalid": "^2.7.16",
     "mongoose": "^5.11.11"
   },
   "devDependencies": {
