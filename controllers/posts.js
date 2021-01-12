@@ -65,14 +65,14 @@ exports.updatePost = async (req, res, next) => {
 exports.deletePost = async (req, res, next) => {
     try {
         const post = await Post.findById(req.params.id)
-
+        console.log()
         if (!post) {
-            throw new Error('Post not found')
+            res.send('Post not found')
         }
 
         await post.remove()
 
-        res.json(post)
+        res.status(200).json({"status":"ok"})
 
     } catch (e) {
         console.log(e)
