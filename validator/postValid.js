@@ -46,8 +46,8 @@ exports.postValid = async (req, res, next) => {
             },
             'date': {
                 type: Date,
-             }
-            
+            }
+
         })
 
         next()

@@ -10,14 +10,14 @@ const app = express()
 // database
 mongoose.connect(config.DATABASE, {
     useNewUrlParser: true,
-    useCreateIndex:true,
-    useUnifiedTopology:true,
-    useFindAndModify:false
+    useCreateIndex: true,
+    useUnifiedTopology: true,
+    useFindAndModify: false
 }).then(() => console.log('Database connected'))
 
 // middleware
 app.use(bodyParser.urlencoded({
-    extended:true
+    extended: true
 }))
 app.use(bodyParser.json())
 
