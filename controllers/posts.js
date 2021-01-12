@@ -54,8 +54,7 @@ exports.updatePost = async (req, res, next) => {
         if (!post) {
             throw new Error('Post not found')
         }
-
-        res.json('post updated')
+        next()
 
     } catch (e) {
         console.log(e)
@@ -72,7 +71,8 @@ exports.deletePost = async (req, res, next) => {
         }
 
         await post.remove()
-        res.json("post deleted")
+
+        res.json(post)
 
     } catch (e) {
         console.log(e)

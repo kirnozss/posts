@@ -13,7 +13,7 @@ const { postValid } = require('../validator/postValid')
 
 
 router.post('/', postValid, createPost)
-router.put('/:id', postValid, updatePost)
+router.put('/:id', postValid, updatePost, getPostById)
 router.get('/', getPosts)
 router.get('/:id', getPostById)
 router.delete('/:id', deletePost)
