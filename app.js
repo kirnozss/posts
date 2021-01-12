@@ -3,6 +3,7 @@ const bodyParser = require('body-parser')
 const mongoose = require('mongoose')
 
 const config = require('./config/keys')
+const postsRoutes = require('./routes/posts')
 
 const app = express()
 
@@ -20,10 +21,8 @@ app.use(bodyParser.urlencoded({
 }))
 app.use(bodyParser.json())
 
-app.get("/", (req, res) => {
-    res.json('Hello')
-})
-
+// routes middleware
+app.use('/api/posts', postsRoutes)
 
 const port = config.PORT || 4000
 app.listen(port, () => {
